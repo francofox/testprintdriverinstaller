@@ -70,5 +70,6 @@ function Uninstall-Driver {
 if ($args[0] -eq "/i") {
 	Install-Driver -InfName "CNLB0MA64.INF" -InfPath "$Env:SystemRoot\System32\DriverStore\FileRepository\cnlb0ma64.inf_amd64_d4f4062dad259878\CNLB0MA64.INF" -DriverName "Canon Generic Plus UFR II V250" -IpAddress "192.168.1.102" -PortName "CAN_PP" -PrinterName "Canon Printer PP"
 } elseif ($args[0] -eq "/x") {
-	Uninstall-Driver -InfName "CNLB0MA64.INF" -PrinterName "Canon Printer PP" -PortName "CAN_PP" -DriverName "Canon Generic Plus UFR II V250"
+	# Uninstall-Driver -InfName "CNLB0MA64.INF" -PrinterName "Canon Printer PP" -PortName "CAN_PP" -DriverName "Canon Generic Plus UFR II V250"
+ # Does not work for this driver, it creates a separate OEM INF system-specific that need to track - todo
 }
