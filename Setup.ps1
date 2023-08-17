@@ -46,11 +46,6 @@ function Uninstall-Driver {
 	process {
 		Set-Location $PSScriptRoot
 		
-		# Set up logfile / creer une historique pour l'installation
-		if (!(Test-Path "$Env:ProgramData\CompanyName")) {
-			New-Item -Path "$Env:ProgramData\" -Name "CompanyName" -ItemType "directory"
-		}
-		
 		Remove-Printer -Name $PrinterName
 		Remove-PrinterPort -Name $PortName
 		Remove-PrinterDriver -Name $DriverName
