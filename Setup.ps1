@@ -20,10 +20,6 @@ function Install-Driver {
 	)
 	process {
 		Set-Location $PSScriptRoot
-		# Set up logfile / creer une historique pour l'installation
-		if (!(Test-Path "$Env:ProgramData\CompanyName")) {
-			New-Item -Path "$Env:ProgramData\" -Name "CompanyName" -ItemType "directory"
-		}
 		
 		C:\Windows\SysNative\pnputil.exe /add-driver "$PSScriptRoot\$InfName"
 		Add-PrinterDriver -Name $DriverName -InfPath $InfPath
